@@ -26,6 +26,7 @@ final class Version20200522160108 extends AbstractMigration
         $this->addSql('ALTER TABLE image_file ADD file_id INT NOT NULL');
         $this->addSql('ALTER TABLE image_file ADD CONSTRAINT FK_7EA5DC8E93CB796C FOREIGN KEY (file_id) REFERENCES file (id)');
         $this->addSql('CREATE INDEX IDX_7EA5DC8E93CB796C ON image_file (file_id)');
+        $this->addSql("CREATE INDEX file_hash ON file (hash(6));");
     }
 
     public function down(Schema $schema) : void

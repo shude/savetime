@@ -19,32 +19,8 @@ class ImageFileRepository extends ServiceEntityRepository
         parent::__construct($registry, ImageFile::class);
     }
 
-    // /**
-    //  * @return ImageFile[] Returns an array of ImageFile objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getByOriginName(string $origin)
     {
-        return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('i.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->findOneBy(['origin_name' => $origin]);
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?ImageFile
-    {
-        return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

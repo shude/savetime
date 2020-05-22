@@ -27,6 +27,12 @@ class ImageFile
      */
     private $created_at;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=File::class, inversedBy="imageFiles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $file;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +58,18 @@ class ImageFile
     public function setCreatedAt(\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getFile(): ?File
+    {
+        return $this->file;
+    }
+
+    public function setFile(?File $file): self
+    {
+        $this->file = $file;
 
         return $this;
     }

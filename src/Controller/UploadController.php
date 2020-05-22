@@ -11,9 +11,9 @@ namespace App\Controller;
 
 use App\Entity\File;
 use App\Entity\ImageFile;
-use App\FileUploader\FileManager;
-use App\FileUploader\FileManagerInterface;
-use App\FileUploader\UploaderInterface;
+use App\FileManager\FileManager;
+use App\FileManager\FileManagerInterface;
+use App\FileManager\UploaderInterface;
 use App\Hasher\FileHasherInterface;
 use App\ImageValidator\ImageValidator;
 use App\Repository\FileRepository;
@@ -53,6 +53,8 @@ class UploadController extends AbstractController
 
     /**
      * @Route("/file/{fid}", name="app.fileinfo", methods={"GET"})
+     * @param int $fid
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function info(int $fid)
     {

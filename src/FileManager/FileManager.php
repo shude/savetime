@@ -6,7 +6,7 @@
  * 22.05.2020
  */
 
-namespace App\FileUploader;
+namespace App\FileManager;
 
 
 use App\Entity\File;
@@ -69,8 +69,4 @@ class FileManager
 
     }
 
-    protected function getFile(string $h) : ?File
-    {
-
-    }
 }

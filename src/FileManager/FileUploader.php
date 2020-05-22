@@ -6,7 +6,7 @@
  * 22.05.2020
  */
 
-namespace App\FileUploader;
+namespace App\FileManager;
 
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
